@@ -535,7 +535,8 @@
     NSError *processError = nil;
     // custom processing the response data.
     id newResponseObject = XM_SAFE_BLOCK(self.responseProcessHandler, request, responseObject, &processError);
-    if (newResponseObject) {
+//    if (newResponseObject)
+    {
         responseObject = newResponseObject;
     }
     if (processError) {
