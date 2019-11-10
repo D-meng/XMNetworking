@@ -128,14 +128,14 @@
     BOOL isFinished = NO;
     XMLock();
     NSUInteger index = [_requestArray indexOfObject:request];
-    if (responseObject) {
-        [_responseArray replaceObjectAtIndex:index withObject:responseObject];
-    } else {
-        _failed = YES;
-        if (error) {
-            [_responseArray replaceObjectAtIndex:index withObject:error];
-        }
-    }
+    [_responseArray replaceObjectAtIndex:index withObject:responseObject];
+//    if (responseObject) {
+//    } else {
+//        _failed = YES;
+//        if (error) {
+//            [_responseArray replaceObjectAtIndex:index withObject:error];
+//        }
+//    }
     
     _finishedCount++;
     if (_finishedCount == _requestArray.count) {
