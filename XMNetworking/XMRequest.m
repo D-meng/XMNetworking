@@ -131,9 +131,11 @@
     if (responseObject) {
         [_responseArray replaceObjectAtIndex:index withObject:responseObject];
     } else {
-        _failed = YES;
         if (error) {
+            _failed = YES;
             [_responseArray replaceObjectAtIndex:index withObject:error];
+        } else {
+            [_responseArray replaceObjectAtIndex:index withObject:[NSNull null]];
         }
     }
     
